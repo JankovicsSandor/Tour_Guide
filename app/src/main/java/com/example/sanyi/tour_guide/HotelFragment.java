@@ -12,6 +12,9 @@ import java.util.ArrayList;
 
 public class HotelFragment extends Fragment {
 
+    final ArrayList<Sight>sights=new ArrayList<Sight>();
+    final ArrayList<Sight>properSight=new ArrayList<>();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -19,14 +22,19 @@ public class HotelFragment extends Fragment {
         View rootView=inflater.inflate(R.layout.sight_list,container,false);
 
 
-        final ArrayList<Sight>sights=new ArrayList<Sight>();
-        sights.add(new Sight(getString(R.string.Budapest),"Pacek Hotel",R.mipmap.ic_launcher,"Jó hely","Ez egy nagyon jó hely",10000,5000));
+        sights.add(new Sight(getString(R.string.Budapest),"Pacek Hotel",R.drawable.hotel1,"Jó hely","Ez egy nagyon jó hely",10000,5000));
         sights.add(new Sight(getString(R.string.Budapest),"Pace Hotel","Jó hely","Ez e nagyon jó hely",1000,500));
-        sights.add(new Sight(getString(R.string.Budapest),"Pac Hotel",R.mipmap.ic_launcher,"Jó hely","Ez egy nagyon jó hely",100,5000));
-        sights.add(new Sight(getString(R.string.Budapest),"Pac Hotel",R.mipmap.ic_launcher,"Jó he","Ez egy nagyon jó hely",1000,5000));
-        sights.add(new Sight(getString(R.string.Debrecen),"Pac Hotel",R.mipmap.ic_launcher,"Jó he","Ez egy nagyon jó hely",1000,5000));
+        sights.add(new Sight(getString(R.string.Budapest),"Pac Hotel",R.drawable.hotel2,"Jó hely","Ez egy nagyon jó hely",100,5000));
+        sights.add(new Sight(getString(R.string.Budapest),"Pac Hotel",R.drawable.hotel3,"Jó he","Ez egy nagyon jó hely",1000,5000));
+        sights.add(new Sight(getString(R.string.Debrecen),"Pac Hotel",R.drawable.hotel4,"Jó he","Ez egy nagyon jó hely",1000,5000));
 
-        SightAdapter sightAdapter=new SightAdapter(getActivity(),sights);
+
+        for (Sight sight:sights) {
+            if(sight.getCity()==Constants.CITY){
+                properSight.add(sight);
+            }
+        }
+        SightAdapter sightAdapter=new SightAdapter(getActivity(),properSight);
 
         ListView listView=(ListView) rootView.findViewById(R.id.listMap);
 

@@ -20,7 +20,9 @@
             android:name=".CityActivity"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".HotelActivity" />
-        <activity android:name=".RestaurantActivity"></activity>
+        <activity android:name=".RestaurantActivity" />
+        <activity android:name=".EventActivity" />
+        <activity android:name=".FlightActivity"></activity>
     </application>
 
 </manifest>

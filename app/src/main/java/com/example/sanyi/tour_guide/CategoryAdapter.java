@@ -24,23 +24,33 @@ public class CategoryAdapter extends FragmentPagerAdapter {
         if(position==0){
             return new RestaurantFragment();
         }
-         else{
+         else if(position==1){
             return new HotelFragment();
+        }
+        else if(position ==2){
+            return new EventFragment();
+        }
+        else {
+            return new FlightFragment();
         }
     }
 
     // Total number of pages
     @Override
     public int getCount() {
-        return 2;
+        return 4;
     }
 
     public CharSequence getPageTitle(int position){
         switch (position){
             case 0:
                 return mContext.getString(R.string.Restaurant);
-            default:
+            case 1:
                 return mContext.getString(R.string.Hotel);
+            case 2:
+                return mContext.getString(R.string.Event);
+           default:
+                return mContext.getString(R.string.Flight);
         }
     }
 }

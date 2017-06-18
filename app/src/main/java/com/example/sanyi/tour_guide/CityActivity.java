@@ -18,10 +18,8 @@ public class CityActivity extends AppCompatActivity {
         CategoryAdapter adapter=new CategoryAdapter(this,getSupportFragmentManager());
 
         viewPager.setAdapter(adapter);
-
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
 
         tabLayout.setupWithViewPager(viewPager);
-
     }
 }

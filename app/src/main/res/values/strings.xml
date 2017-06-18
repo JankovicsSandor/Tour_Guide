@@ -4,8 +4,43 @@
     <string name="Debrecen">Debrecen</string>
     <string name="Restaurant">Restaurant</string>
     <string name="Hotel">Hotel</string>
+    <string name="Event">Event</string>
+    <string name="Flight">Flight</string>
     <string name="currency">HUF</string>
 
+    <string name="Hotel1Name">Hotel Laroan</string>
+    <string name="Hotel2Name">Hotel Potel</string>
+    <string name="Hotel3Name">Hotel Fish</string>
+    <string name="Hotel4Name">Hotel Marriott</string>
+    <string name="Hotel5Name">Hotel Lacruise</string>
+    <string name="Hotel6Name">Hotel Ship</string>
+
+    <string name="Restaurant1Name">Italian restaurant</string>
+    <string name="Restaurant2Name">Swedish restaurant</string>
+    <string name="Restaurant3Name">Hungarian restaurant</string>
+    <string name="Restaurant4Name">Jo Fogas</string>
+    <string name="Restaurant5Name">Good Meal</string>
+    <string name="Restaurant6Name">Good Food</string>
+    <string name="Restaurant7Name">Best Markt</string>
+    <string name="Restaurant8Name">Restaurant on the corner</string>
+
+    <string name="Flight1Name">Roma</string>
+    <string name="Flight2Name">Milano</string>
+    <string name="Flight3Name">Sicila</string>
+    <string name="Flight4Name">Paris</string>
+    <string name="Flight5Name">Hamburg</string>
+    <string name="Flight6Name">London</string>
+    <string name="Flight7Name">Paris</string>
+    <string name="Flight8Name">New York</string>
+
+    <string name="Event1Name">Summer Camp</string>
+    <string name="Event2Name">Volt</string>
+    <string name="Event3Name">Sziget</string>
+    <string name="Event4Name">Sound</string>
+    <string name="Event5Name">Best Festival</string>
+    <string name="Event6Name">Lake camp</string>
+    <string name="Event7Name">Patriot</string>
+    <string name="Event8Name">Horse ride</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

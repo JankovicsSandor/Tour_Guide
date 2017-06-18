@@ -11,27 +11,26 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 
-public class HotelFragment extends Fragment {
-
-    final ArrayList<Sight>sights=new ArrayList<Sight>();
+public class FlightFragment extends Fragment {
+    final ArrayList<Sight> sights=new ArrayList<Sight>();
     final ArrayList<Sight>properSight=new ArrayList<>();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        sights.add(new Sight(getString(R.string.Budapest),getString(R.string.Hotel1Name),R.drawable.hotel1,10000,5000));
-        sights.add(new Sight(getString(R.string.Budapest),getString(R.string.Hotel2Name),1000,500));
-        sights.add(new Sight(getString(R.string.Budapest),getString(R.string.Hotel3Name),R.drawable.hotel2,100,5000));
-        sights.add(new Sight(getString(R.string.Budapest),getString(R.string.Hotel4Name),R.drawable.hotel3,1000,5000));
-        sights.add(new Sight(getString(R.string.Debrecen),getString(R.string.Hotel5Name),R.drawable.hotel4,1000,5000));
-        sights.add(new Sight(getString(R.string.Debrecen),getString(R.string.Hotel6Name),R.drawable.hotel4,1000,5000));
-
-
+        sights.add(new Sight(getString(R.string.Budapest),getString(R.string.Flight1Name),R.drawable.vluchten_volgen,10000,5000));
+        sights.add(new Sight(getString(R.string.Budapest),getString(R.string.Flight2Name),1000,500));
+        sights.add(new Sight(getString(R.string.Budapest),getString(R.string.Flight3Name),R.drawable.vluchten_volgen,100,5000));
+        sights.add(new Sight(getString(R.string.Budapest),getString(R.string.Flight4Name),R.drawable.vluchten_volgen,1000,5000));
+        sights.add(new Sight(getString(R.string.Debrecen),getString(R.string.Flight5Name),R.drawable.vluchten_volgen,1000,5000));
+        sights.add(new Sight(getString(R.string.Debrecen),getString(R.string.Flight6Name),R.drawable.vluchten_volgen,1000,5000));
+        sights.add(new Sight(getString(R.string.Debrecen),getString(R.string.Flight7Name),R.drawable.vluchten_volgen,1000,5000));
         for (Sight sight:sights) {
             if(sight.getCity().equals(Constants.CITY)){
                 properSight.add(sight);
             }
         }
+
     }
 
     @Override
@@ -51,5 +50,4 @@ public class HotelFragment extends Fragment {
         return rootView;
 
     }
-
 }

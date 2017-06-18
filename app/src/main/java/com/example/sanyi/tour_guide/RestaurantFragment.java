@@ -1,6 +1,7 @@
 package com.example.sanyi.tour_guide;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,29 +15,35 @@ public class RestaurantFragment extends Fragment {
 
     final ArrayList<Sight> sights=new ArrayList<Sight>();
     final ArrayList<Sight>properSight=new ArrayList<>();
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        sights.add(new Sight(getString(R.string.Budapest),getString(R.string.Restaurant1Name),R.drawable.rest1,10000,5000));
+        sights.add(new Sight(getString(R.string.Debrecen),getString(R.string.Restaurant2Name),R.drawable.rest2,10000,5000));
+        sights.add(new Sight(getString(R.string.Debrecen),getString(R.string.Restaurant3Name),R.drawable.rest3,10000,5000));
+        sights.add(new Sight(getString(R.string.Debrecen),getString(R.string.Restaurant4Name),R.drawable.rest4,10000,5000));
+        sights.add(new Sight(getString(R.string.Debrecen),getString(R.string.Restaurant5Name),R.drawable.rest5,10000,5000));
+        sights.add(new Sight(getString(R.string.Budapest),getString(R.string.Restaurant6Name),R.drawable.rest6,10000,5000));
+        sights.add(new Sight(getString(R.string.Budapest),getString(R.string.Restaurant7Name),1000,500));
+        sights.add(new Sight(getString(R.string.Budapest),getString(R.string.Restaurant8Name),R.drawable.rest7,100,5000));
+        sights.add(new Sight(getString(R.string.Debrecen),getString(R.string.Restaurant4Name),R.drawable.rest5,10000,5000));
+        sights.add(new Sight(getString(R.string.Budapest),getString(R.string.Restaurant3Name),R.drawable.rest3,1000,5000));
+
+        for (Sight sight:sights) {
+            if(sight.getCity().equals(Constants.CITY)){
+                properSight.add(sight);
+            }
+        }
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
-        sights.add(new Sight(getString(R.string.Budapest),"Pacek Étterem",R.drawable.rest1,"Jó hely","Ez egy nagyon jó hely",10000,5000));
-        sights.add(new Sight(getString(R.string.Debrecen),"P Étterem",R.drawable.rest2,"Jó hely","Ez egy nagyon jó hely",10000,5000));
-        sights.add(new Sight(getString(R.string.Debrecen),"P Étterem",R.drawable.rest3,"Jó hely","Ez egy nagyon jó hely",10000,5000));
-        sights.add(new Sight(getString(R.string.Debrecen),"PaÉtterem",R.drawable.rest4,"Jó hely","Ez egy nagyon jó hely",10000,5000));
-        sights.add(new Sight(getString(R.string.Debrecen),"Étterem",R.drawable.rest5,"Jó hely","Ez egy nagyon jó hely",10000,5000));
-        sights.add(new Sight(getString(R.string.Budapest),"PaÉtterem",R.drawable.rest6,"Jó hely","Ez egy nagyon jó hely",10000,5000));
-        sights.add(new Sight(getString(R.string.Budapest),"Pace Étterem","Jó hely","Ez e nagyon jó hely",1000,500));
-        sights.add(new Sight(getString(R.string.Budapest),"Pac Étterem",R.drawable.rest7,"Jó hely","Ez egy nagyon jó hely",100,5000));
-        sights.add(new Sight(getString(R.string.Debrecen),"PaÉtterem",R.drawable.rest5,"Jóhs hely","Ez egy nagyon jó hely",10000,5000));
-        sights.add(new Sight(getString(R.string.Budapest),"Pac Étterem",R.drawable.rest3,"Jó he","Ez egy nagyon jó hely",1000,5000));
-
         // Inflate the layout for this fragment
         View rootView=inflater.inflate(R.layout.sight_list,container,false);
-        for (Sight sight:sights) {
-            if(sight.getCity()==Constants.CITY){
-                properSight.add(sight);
-            }
-        }
+
 
         SightAdapter sightAdapter=new SightAdapter(getActivity(),properSight);
 
